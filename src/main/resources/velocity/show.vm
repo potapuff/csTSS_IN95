@@ -1,0 +1,32 @@
+#parse("/velocity/main_layout.vm")
+#@mainLayout()
+<div class="container pt-5">
+    <h1>
+        <a href="/" title="back">
+            <ion-icon name="return-down-back-outline"></ion-icon>
+        </a>
+        Table $tableName</h1>
+    <table class="table table-striped">
+        <tr>
+            #foreach ($header in $table.headers)
+                <th>
+                    $header
+                </th>
+            #end
+        </tr>
+        #foreach ($row in $table.rows)
+            <tr>
+                #foreach ($value in $row)
+                    <td>
+                        #if ($value)
+                            $value
+                        #else
+                            <span class="gray">NULL</span>
+                        #end
+                    </td>
+                #end
+            </tr>
+        #end
+    </table>
+</div>
+#end

@@ -1,7 +1,20 @@
 #parse("/velocity/main_layout.vm")
 #@mainLayout()
 <div class="container pt-5">
-  <h1>My Header</h1>
-  <p>text</p>
+  <h1>Database viewer</h1>
+  <table>
+    <tr>
+      <th>List of tables</th>
+    </tr>
+    #foreach ($row in $tables.rows)
+      <tr>
+        #foreach ($value in $row)
+          <td>
+            <a href="/$value">$value</a>
+          </td>
+        #end
+      </tr>
+    #end
+  </table>
 </div>
 #end
