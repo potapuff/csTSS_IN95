@@ -1,0 +1,7 @@
+#parse("/velocity/main_layout.vm")
+#@mainLayout()
+<div class="container pt-5">
+  <h1>My Header</h1>
+  <p>text</p>
+</div>
+#end
