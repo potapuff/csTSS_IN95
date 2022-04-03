@@ -18,9 +18,18 @@ public class MainController {
 
     public static void index(Context context) throws Exception {
         Map<String, Object> model = new HashMap<>();
-        Table tableNames = DBService.asTable(DBService.LIST_OF_TABLES_SQL);
-        model.put("tables", tableNames);
-        context.render("/velocity/index.vm", model);
+        String filter = context.queryParam("filter");
+        Table tableNames;
+        if (filter!=null) {
+            tableNames = DBService.asTable(DBService.LIST_OF_TABLES_SQL_WITH_FILTER.addParameter("filter", filter).toString());
+            model.put("filter", filter);
+            model.put("tables", tableNames);
+            context.render("/velocity/_tables_list.vm", model);
+        } else {
+            tableNames = DBService.asTable(DBService.LIST_OF_TABLES_SQL);
+            model.put("tables", tableNames);
+            context.render("/velocity/index.vm", model);
+        }
     }
 
     public static void show(Context context) {

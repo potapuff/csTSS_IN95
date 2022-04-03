@@ -1,6 +1,7 @@
 package sumdu.tss.in85.model;
 
 import sumdu.tss.in85.helper.Keys;
+import sumdu.tss.in85.helper.utils.ParameterizedStringFactory;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -18,6 +19,9 @@ public class DBService {
                     WHERE type IN ('table','view')
                     ORDER BY 1
                     """;
+    public static final ParameterizedStringFactory LIST_OF_TABLES_SQL_WITH_FILTER = new ParameterizedStringFactory(
+            "SELECT * FROM (" + LIST_OF_TABLES_SQL+") WHERE UPPER(name) like UPPER('%:filter%')"
+    );
 
     public static Table asTable(String query) throws SQLException {
         try (var connection = DriverManager.getConnection("jdbc:sqlite:" + Keys.get("DB.NAME"))) {

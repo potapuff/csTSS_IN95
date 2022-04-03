@@ -1,0 +1,19 @@
+#if ($filter)
+  <h2>Tables with '$filter'</h2>
+#else
+  <h2>All tables</h2>
+#end
+#if ($tables.rows.size() == 0)
+  <p>No table to view</p>
+#else
+<ul>
+    #foreach ($row in $tables.rows)
+        <li>
+            #foreach ($value in $row)
+                <a href="/$value">$value</a>
+            #end
+        </li>
+    #end
+</ul>
+</div>
+#end

@@ -1,20 +1,17 @@
 #parse("/velocity/main_layout.vm")
+
 #@mainLayout()
 <div class="container pt-5">
   <h1>Database viewer</h1>
-  <table>
-    <tr>
-      <th>List of tables</th>
-    </tr>
-    #foreach ($row in $tables.rows)
-      <tr>
-        #foreach ($value in $row)
-          <td>
-            <a href="/$value">$value</a>
-          </td>
-        #end
-      </tr>
-    #end
-  </table>
+  <p>Type to filtrate: <input type="text" id="filter"></p>
+  <div id="explorer">
+     #parse("/velocity/_tables_list.vm")
+  </div>
 </div>
 #end
+
+<script type="text/javascript">
+  document.getElementById("filter").addEventListener("input", function (){
+    $.get("/",  {filter: this.value}, function (data){$('#explorer').html(data);});
+  });
+</script>

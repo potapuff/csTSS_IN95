@@ -35,8 +35,10 @@ Example:
 APP.URL = 127.0.0.1
 APP.PORT = 7000
 ENV = development
-DB.NAME = sample.db
+DB.NAME = chinook.db
 ```
+We use Chinook sample database obtained from https://www.sqlitetutorial.net/sqlite-sample-database/ .
+
 ## How to run?
 
 1. Build project
