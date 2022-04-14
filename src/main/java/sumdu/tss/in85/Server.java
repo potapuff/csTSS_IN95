@@ -24,12 +24,22 @@ public class Server {
                     .get("/{table}", MainController::show);
         }
 
-        public static void main(final String[] args) {
-            var file = new File(args.length < 1 ? "config.properties" : args[0]);
-            Keys.loadParams(file);
+    public static void main(final String[] args) {
+        var file = new File(args.length < 1 ? "config.properties" : args[0]);
+        Keys.loadParams(file);
 
-            new Server().start(Integer.parseInt(Keys.get("APP.PORT")));
-        }
+        new Server().start(Integer.parseInt(Keys.get("APP.PORT")));
+    }
+
+    /**
+     * Return url to site root, including protocol, host and port
+     *
+     * @return String like 'http://127.0.0.1:7000/'
+     */
+    @SuppressWarnings("HttpUrlsUsage")
+    public String getBaseUrl() {
+        return "http://" + Keys.get("APP.URL") + ":" + Keys.get("APP.PORT") + "/";
+    }
 
     public void start(final int port) {
         this.app.start(port);

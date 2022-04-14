@@ -2,6 +2,7 @@ package sumdu.tss.in85.model;
 
 import sumdu.tss.in85.helper.Keys;
 import sumdu.tss.in85.helper.utils.ParameterizedStringFactory;
+import sumdu.tss.in85.helper.utils.ResourceResolver;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -24,7 +25,11 @@ public class DBService {
     );
 
     public static Table asTable(String query) throws SQLException {
-        try (var connection = DriverManager.getConnection("jdbc:sqlite:" + Keys.get("DB.NAME"))) {
+        var file = ResourceResolver.getResource(Keys.get("DB.NAME"));
+        if (file == null) {
+            throw new RuntimeException("Database file " + Keys.get("DB.NAME") + " not found");
+        }
+        try (var connection = DriverManager.getConnection("jdbc:sqlite:" + file.getAbsolutePath())) {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30); // set timeout to 30 sec.
             ResultSet rs = statement.executeQuery(query);

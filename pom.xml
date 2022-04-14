@@ -45,6 +45,14 @@
             <version>5.8.1</version>
             <scope>test</scope>
         </dependency>
+        <!-- Integration tests -->
+        <dependency>
+            <groupId>com.konghq</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>[3.13.0,)</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- UI+Integration testing -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
