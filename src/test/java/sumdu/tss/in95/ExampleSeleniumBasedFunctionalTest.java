@@ -1,4 +1,4 @@
-package sumdu.tss.in85;
+package sumdu.tss.in95;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -9,8 +9,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import sumdu.tss.in85.helper.Keys;
-import sumdu.tss.in85.helper.utils.ResourceResolver;
+import sumdu.tss.in95.helper.Keys;
+import sumdu.tss.in95.helper.utils.ResourceResolver;
 
 import java.io.File;
 import java.io.IOException;

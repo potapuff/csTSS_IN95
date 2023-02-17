@@ -1,8 +1,8 @@
-package sumdu.tss.in85.helper;
+package sumdu.tss.in95.helper;
 
 import io.javalin.http.Context;
-import sumdu.tss.in85.helper.exception.HttpException;
-import sumdu.tss.in85.helper.utils.ExceptionUtils;
+import sumdu.tss.in95.helper.exception.HttpException;
+import sumdu.tss.in95.helper.utils.ExceptionUtils;
 
 import java.util.HashMap;
 

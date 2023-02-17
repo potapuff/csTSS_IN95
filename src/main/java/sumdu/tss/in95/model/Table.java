@@ -1,4 +1,4 @@
-package sumdu.tss.in85.model;
+package sumdu.tss.in95.model;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

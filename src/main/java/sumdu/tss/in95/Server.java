@@ -1,12 +1,12 @@
-package sumdu.tss.in85;
+package sumdu.tss.in95;
 
 import io.javalin.Javalin;
 import io.javalin.core.util.JavalinLogger;
 import io.javalin.http.staticfiles.Location;
-import sumdu.tss.in85.controller.MainController;
-import sumdu.tss.in85.helper.Keys;
-import sumdu.tss.in85.helper.ViewHelper;
-import sumdu.tss.in85.helper.exception.HttpException;
+import sumdu.tss.in95.controller.MainController;
+import sumdu.tss.in95.helper.Keys;
+import sumdu.tss.in95.helper.ViewHelper;
+import sumdu.tss.in95.helper.exception.HttpException;
 
 import java.io.File;
 

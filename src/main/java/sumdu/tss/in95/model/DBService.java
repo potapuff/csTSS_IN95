@@ -1,8 +1,8 @@
-package sumdu.tss.in85.model;
+package sumdu.tss.in95.model;
 
-import sumdu.tss.in85.helper.Keys;
-import sumdu.tss.in85.helper.utils.ParameterizedStringFactory;
-import sumdu.tss.in85.helper.utils.ResourceResolver;
+import sumdu.tss.in95.helper.Keys;
+import sumdu.tss.in95.helper.utils.ParameterizedStringFactory;
+import sumdu.tss.in95.helper.utils.ResourceResolver;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;

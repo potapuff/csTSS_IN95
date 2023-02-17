@@ -1,11 +1,11 @@
-package sumdu.tss.in85;
+package sumdu.tss.in95;
 
 import kong.unirest.Unirest;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import sumdu.tss.in85.helper.Keys;
-import sumdu.tss.in85.helper.utils.ResourceResolver;
+import sumdu.tss.in95.helper.Keys;
+import sumdu.tss.in95.helper.utils.ResourceResolver;
 
 import java.io.File;
 import java.util.Arrays;

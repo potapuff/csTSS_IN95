@@ -1,4 +1,4 @@
-package sumdu.tss.in85.helper.exception;
+package sumdu.tss.in95.helper.exception;
 
 public class NotFoundException extends HttpError400 {
 

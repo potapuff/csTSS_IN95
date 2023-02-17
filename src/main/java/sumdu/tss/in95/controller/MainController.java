@@ -1,11 +1,11 @@
-package sumdu.tss.in85.controller;
+package sumdu.tss.in95.controller;
 
 import io.javalin.http.Context;
-import sumdu.tss.in85.helper.exception.NotFoundException;
-import sumdu.tss.in85.helper.utils.ExceptionUtils;
-import sumdu.tss.in85.helper.utils.ParameterizedStringFactory;
-import sumdu.tss.in85.model.DBService;
-import sumdu.tss.in85.model.Table;
+import sumdu.tss.in95.helper.exception.NotFoundException;
+import sumdu.tss.in95.helper.utils.ExceptionUtils;
+import sumdu.tss.in95.helper.utils.ParameterizedStringFactory;
+import sumdu.tss.in95.model.DBService;
+import sumdu.tss.in95.model.Table;
 
 import java.sql.SQLException;
 import java.util.HashMap;
