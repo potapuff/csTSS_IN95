@@ -1,12 +1,12 @@
 package sumdu.tss.in95;
 
 import io.javalin.Javalin;
-import io.javalin.core.util.JavalinLogger;
 import io.javalin.http.staticfiles.Location;
 import sumdu.tss.in95.controller.MainController;
 import sumdu.tss.in95.helper.Keys;
 import sumdu.tss.in95.helper.ViewHelper;
 import sumdu.tss.in95.helper.exception.HttpException;
+import io.javalin.rendering.template.JavalinVelocity;
 
 import java.io.File;
 
@@ -15,9 +15,9 @@ public class Server {
         private final Javalin app;
 
         {
+            JavalinVelocity.init(null);
             app = Javalin.create(
-                            config -> config.addStaticFiles("/public", Location.CLASSPATH))
-                    .before(context -> JavalinLogger.info("[" + context.method() + "] " + context.url()))
+                            config -> config.staticFiles.add("/public", Location.CLASSPATH))
                     .exception(HttpException.class, ViewHelper::userError)
                     .exception(Exception.class, (e, ctx) -> ViewHelper.userError(new HttpException(e), ctx))
                     .get("/", MainController::index)
